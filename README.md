@@ -1,138 +1,74 @@
-# Wasim Akram — Portfolio (Instagram-Style)
-
-A full-stack personal portfolio with an **Instagram-inspired dark UI**, built with Node.js, Express, and MongoDB.
-
+# Wasim Akram — Developer Portfolio
+A sleek, professional, and fully responsive developer portfolio built for showcasing projects and technical skills. It features a custom-built secure Admin Dashboard for easily managing portfolio content dynamically via a database, without needing to touch the code.
+## 🚀 Features
+- **Professional Dark Theme**: A deep, modern forest green aesthetic tailored for a developer.
+- **Fully Responsive**: Flawless layout across mobile, tablet, and desktop screens using modern CSS Grid and Flexbox.
+- **Dynamic Content**: Projects and Skills are fetched directly from a MongoDB database.
+- **Admin Dashboard**: A secure backend panel to add, edit, or delete Projects and Skills.
+- **JWT Authentication**: The admin panel uses secure JSON Web Tokens for authentication.
+- **Security Headers**: API is secured with CORS, Helmet, and rate limiting (where applicable).
+## 🛠️ Technology Stack
+- **Frontend**: HTML5, Vanilla CSS3 (Custom Variables, Grid), Vanilla JavaScript (ES6+).
+- **Backend**: Node.js, Express.js.
+- **Database**: MongoDB (Mongoose ODM).
+- **Authentication**: JWT (JSON Web Tokens), dotenv for environment variables.
 ---
-
-## 🚀 Requirements
-
-| Tool | Version |
-|------|---------|
-| **Node.js** | ≥ 18.0.0 |
-| **npm** | ≥ 8.0.0 |
-| **MongoDB Atlas** | Free cluster (M0) |
-
----
-
-## ⚡ Quick Start
-
-### 1. Install dependencies
-
+## 💻 Installation & Setup
+To run this project locally on your machine, follow these steps:
+### 1. Prerequisites
+- **Node.js** (v14 or higher) installed.
+- **MongoDB Atlas** account (or local MongoDB server) for the database.
+### 2. Clone the Repository
+```bash
+git clone https://github.com/w4simg/portfolio.git
+cd portfolio
+```
+### 3. Install Dependencies
 ```bash
 npm install
 ```
-
-### 2. Configure environment
-
-Edit `.env` in the root directory:
-
+### 4. Environment Variables
+Create a `.env` file in the root directory and add the following variables:
 ```env
+# Server Port
 PORT=5000
 NODE_ENV=development
-
-# Your MongoDB Atlas connection string
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/portfolio
-
-# JWT secret — keep this private!
-JWT_SECRET=your-random-secret-here
-
-# Admin login credentials
-ADMIN_USERNAME=wasimakram
-ADMIN_PASSWORD=your-strong-password
-
-# Frontend URL (leave as-is for local dev)
+# MongoDB Connection String (Replace with your own cluster URL)
+MONGO_URI="mongodb+srv://<username>:<password>@cluster.mongodb.net/portfolio"
+# Security (Generate a strong random string for JWT)
+JWT_SECRET=your_super_secret_jwt_string_here
+# Admin Credentials (Used to login to the admin panel)
+ADMIN_USERNAME=w4sim
+ADMIN_PASSWORD=Wasim@1234
+# Frontend URL
 CLIENT_URL=http://localhost:5000
 ```
-
-### 3. Seed initial data (optional)
-
+### 5. Seed the Database (Optional)
+To populate the database with initial sample data for your projects and skills:
 ```bash
 npm run seed
 ```
-
-### 4. Start development server
-
+### 6. Start the Application
+Run the development server using nodemon:
 ```bash
 npm run dev
 ```
-
-> Open **http://localhost:5000** in your browser.
-
+- The main portfolio site will be available at: `http://localhost:5000`
+- The Admin Panel will be available at: `http://localhost:5000/admin.html`
 ---
-
-## 📂 Project Structure
-
-```
-MY_PORTFOLIO/
-├── client/               # Frontend (served as static files)
-│   ├── index.html        # Instagram-style portfolio page
-│   ├── admin.html        # Instagram-style admin dashboard
-│   ├── css/
-│   │   ├── style.css     # Main Instagram-style stylesheet
-│   │   └── admin.css     # Admin panel stylesheet
-│   └── js/
-│       ├── main.js       # Projects/skills rendering + contact form
-│       ├── animations.js # Typewriter + scroll reveal + interactions
-│       └── admin.js      # Admin CRUD logic
-├── server/               # Backend (Express + MongoDB)
-│   ├── app.js
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── config/
-│   └── seed.js           # Seed script
-├── server.js             # Entry point
-├── package.json
-└── .env                  # Environment variables (never commit!)
-```
-
+## 🛡️ Admin Panel Security Explained
+You may wonder how the admin panel is secured. Here is a breakdown of the security model used in this application:
+1. **Environment Variables**: The admin credentials (`ADMIN_USERNAME` and `ADMIN_PASSWORD`) are stored exclusively in the `.env` file on the server. They are **never** exposed to the frontend code or committed to GitHub.
+2. **Server-Side Validation**: When you enter the credentials in the admin panel, they are sent securely to the Node.js backend. The server compares the provided credentials against the hidden environment variables.
+3. **JWT Authorization**: Upon a successful login, the server generates a cryptographically signed **JSON Web Token (JWT)** using your highly secure `JWT_SECRET`. This token is sent back to your browser.
+4. **Protected API Routes**: Every time the admin panel tries to create, edit, or delete a project/skill, it must attach this JWT to the request headers. The server verifies the token signature before allowing any changes to the database. Without the token, the backend firmly rejects the request.
+This lightweight environment-variable approach is highly efficient and perfectly secure for a single-user portfolio site!
 ---
-
-## 🎨 UI Theme
-
-The portfolio uses an **Instagram-inspired dark theme**:
-
-- 🖤 Pure black background (`#000000`)
-- 🌈 Instagram gradient accents (`#833ab4 → #fd1d1d → #fcb045`)
-- 📸 3-column post grid for projects (click to open modal)
-- 🔵 Story ring highlights for skill categories
-- 📱 Bottom navigation bar on mobile
-- 🏛️ Sidebar navigation in admin panel
-
+## 👨‍💻 Author
+**Wasim Akram**
+- **GitHub**: [@w4simg](https://github.com/w4simg)
+- **LinkedIn**: [wasimz](https://www.linkedin.com/in/wasimz)
+- **Email**: 78690wasimakram@gmail.com
 ---
-
-## 👤 Personal Info
-
-| Field | Value |
-|-------|-------|
-| **Name** | Wasim Akram |
-| **GitHub** | [github.com/w4simg](https://github.com/w4simg) |
-| **LinkedIn** | [linkedin.com/in/wasimz](https://www.linkedin.com/in/wasimz) |
-| **Email** | 78690wasimakram@gmail.com |
-
----
-
-## 🔐 Admin Panel
-
-Visit `/admin.html` to manage projects and skills. Default credentials are set in `.env`.
-
----
-
-## 📦 Scripts
-
-```bash
-npm start      # Production
-npm run dev    # Development (with nodemon auto-restart)
-npm run seed   # Seed initial demo data to MongoDB
-```
-
----
-
-## 🌐 Deployment
-
-This project includes a `render.yaml` for one-click deploy to [Render.com](https://render.com).
-
-Before deploying:
-1. Set all environment variables in Render's dashboard
-2. Update `CLIENT_URL` to your production URL
+## 📝 License
+This project is licensed under the MIT License.
