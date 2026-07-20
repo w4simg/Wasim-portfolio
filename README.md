@@ -27,21 +27,7 @@ cd portfolio
 ```bash
 npm install
 ```
-### 4. Environment Variables
-Create a `.env` file in the root directory and add the following variables:
-```env
-# Server Port
-PORT=5000
-NODE_ENV=development
-# MongoDB Connection String (Replace with your own cluster URL)
-MONGO_URI="mongodb+srv://<username>:<password>@cluster.mongodb.net/portfolio"
-# Security (Generate a strong random string for JWT)
-JWT_SECRET=your_super_secret_jwt_string_here
-# Admin Credentials (Used to login to the admin panel)
-ADMIN_USERNAME=w4sim
-ADMIN_PASSWORD=Wasim@1234
-# Frontend URL
-CLIENT_URL=http://localhost:5000
+
 ```
 ### 5. Seed the Database (Optional)
 To populate the database with initial sample data for your projects and skills:
