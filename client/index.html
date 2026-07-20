@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wasim Akram — Python & Full Stack Developer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        wasim.dev
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="admin.html" class="nav-link" style="color: var(--accent-primary);">Admin Panel</a></li>
+      </ul>
+      
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero Section ───────────────────────────────────────────────────── -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-content reveal" style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap-reverse;">
+        <div style="flex: 1; min-width: 300px;">
+          <span class="hero-greeting">Hi, my name is</span>
+          <h1 class="hero-name">Wasim Akram.</h1>
+          <h2 class="hero-subtitle">I build things for the web.</h2>
+          <p class="hero-desc">
+            I'm a developer specializing in building (and occasionally designing) exceptional digital experiences. 
+            Currently, I'm focused on building robust <span id="typewriter">Python backend systems</span> and scalable full-stack applications.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        
+        <!-- GitHub Photo Link -->
+        <a href="https://github.com/w4simg" target="_blank" rel="noopener noreferrer" style="display: block; border-radius: 50%; border: 4px solid var(--accent-primary); overflow: hidden; width: 250px; height: 250px; flex-shrink: 0; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05) translateY(-10px)'" onmouseout="this.style.transform='scale(1) translateY(0)'">
+          <img src="https://github.com/w4simg.png" alt="Wasim Akram GitHub Profile" style="width: 100%; height: 100%; object-fit: cover;">
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects Section ───────────────────────────────────────────────── -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Some Things I've Built</h2>
+      
+      <!-- Dynamically injected projects go here -->
+      <div class="projects-grid" id="projectsGrid">
+        <div class="loading-state">Loading projects...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills Section ─────────────────────────────────────────────────── -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Technologies I Work With</h2>
+      
+      <!-- Dynamically injected skills go here -->
+      <div class="skills-wrapper" id="skillsGrid">
+        <div class="loading-state">Loading skills...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact Section ────────────────────────────────────────────────── -->
+  <section class="contact-section" id="contact">
+    <div class="container reveal">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-desc">
+        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+      </p>
+      <a href="mailto:78690wasimakram@gmail.com" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.1rem; margin-bottom: 32px;">Say Hello</a>
+      
+      <!-- Social Links -->
+      <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+        <a href="https://github.com/w4simg" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="color: var(--text-secondary); transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-secondary)'">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/wasimz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: var(--text-secondary); transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-secondary)'">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>Designed & Built by <a href="https://github.com/w4simg" target="_blank" rel="noopener noreferrer">Wasim Akram</a></p>
+    <p style="margin-top: 8px;">&copy; <span id="footer-year"></span></p>
+  </footer>
+
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
